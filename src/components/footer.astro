@@ -1,0 +1,54 @@
+---
+import type { LocalesType } from '@helpers/locale'
+
+type Props = {
+  locale: LocalesType
+}
+
+const { locale } = Astro.props
+---
+
+<footer class='border-t border-gray py-8'>
+  <div class='mx-auto w-full max-w-5xl'>
+    <div class='w-full flex justify-between items-start mb-12'>
+      <div>
+        <div class='flex items-center mb-4'>
+          <img src='/assets/logo-filled.svg' alt='logo' class='w-6 h-6' />
+          <span class='text-white font-bold text-2xl ml-2 mr-8'>Andrew</span>
+          <a
+            href='mailto:andrey779evseev@gmail.com'
+            class='text-gray hover:text-white transition-colors'
+          >
+            andrey779evseev@gmail.com
+          </a>
+        </div>
+        <div class='text-gray'>
+          {locale.footer.description}
+        </div>
+      </div>
+      <div>
+        <div class='text-white font-medium text-2xl mb-3'>
+          {locale.footer.media}
+        </div>
+        <div class='flex items-center'>
+          <a
+            href='https://github.com/andrey779evseev'
+            target='_blank'
+            class='mr-4'
+          >
+            <img src='/assets/github.svg' alt='github-icon' />
+          </a>
+          <a
+            href='https://www.linkedin.com/in/andrew-evseev-4a890b216'
+            target='_blank'
+          >
+            <img src='/assets/linkedIn.svg' alt='linkedIn-icon' />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class='text-gray w-full text-center'>
+      © Copyright 2023. Made by Andrew
+    </div>
+  </div>
+</footer>

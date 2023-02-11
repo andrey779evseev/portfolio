@@ -1,0 +1,73 @@
+---
+import Bookmarks from '@components/bookmarks.astro'
+import Footer from '@components/footer.astro'
+import Header from '@components/header.astro'
+import '@fontsource/fira-code/400.css'
+import '@fontsource/fira-code/500.css'
+import '@fontsource/fira-code/600.css'
+import '@fontsource/fira-code/700.css'
+import type { LocalesType } from '@helpers/locale'
+
+export type Props = {
+  title: string
+  locale: LocalesType
+}
+
+const { title, locale } = Astro.props
+---
+
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/x-icon' href='/favicon.ico' />
+    <meta name='generator' content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body data-title={title}>
+    <Bookmarks />
+    <Header locale={locale} />
+    <main>
+      <div class='pt-16 mx-auto w-full max-w-5xl'>
+        <slot />
+      </div>
+    </main>
+    <Footer locale={locale} />
+  </body>
+</html>
+
+<style is:global>
+  *,
+  *::before,
+  *::after {
+    @apply p-0 m-0 box-border;
+  }
+  html {
+    font-family: 'Fira Code', monospace;
+    @apply bg-background text-white;
+  }
+  main {
+    background-image: url('/assets/background.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right 500px;
+  }
+</style>
+
+<script>
+  const steps = '/-\\|'
+  const FPS = 2
+  const frameInterval = 1000 / FPS
+  let step = 0
+  let lastTimestep = 0
+  const animation = (timestamp: number) => {
+    if (lastTimestep + frameInterval < timestamp) {
+      document.title = `${steps[step++]} ${document.body.dataset.title}`
+      step %= steps.length
+      lastTimestep = timestamp
+    }
+    window.requestAnimationFrame(animation)
+  }
+  window.requestAnimationFrame(animation)
+</script>

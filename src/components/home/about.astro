@@ -1,0 +1,46 @@
+---
+import Button from '@components/button.astro'
+import Label from '@components/label.astro'
+import type { LocalesType } from '@helpers/locale'
+
+type Props = {
+  locale: LocalesType
+}
+
+const { locale } = Astro.props
+const currentLanguage = new URL(Astro.request.url).pathname
+  .slice(1)
+  .split('/')[0]
+---
+
+<section class='mb-28'>
+  <div class='flex justify-between items-start'>
+    <div class='w-full'>
+      <Label>
+        {locale.home.about.heading}
+      </Label>
+      <div class='text-gray max-w-[515px] mb-7'>
+        {locale.home.about.description.part_1}<br /><br />
+        {locale.home.about.description.part_2}<br /><br />
+        {locale.home.about.description.part_3}
+      </div>
+      <Button href={`/${currentLanguage}/about-me`}>
+        {locale.home.about.button} -&gt;
+      </Button>
+    </div>
+    <div class='relative min-w-[339px]'>
+      <img src='/assets/people2.png' alt='people' />
+      <img
+        src='/assets/dots.svg'
+        alt='dots'
+        class='absolute top-[10%] -left-1'
+      />
+      <img
+        src='/assets/dots2.svg'
+        alt='dots'
+        class='absolute top-2/3 right-4'
+      />
+      <div class='h-px w-[271px] absolute bottom-0 right-6 bg-primary'></div>
+    </div>
+  </div>
+</section>

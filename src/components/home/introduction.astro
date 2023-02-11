@@ -1,0 +1,61 @@
+---
+import Button from '@components/button.astro'
+import type { LocalesType } from '@helpers/locale'
+
+type Props = {
+  locale: LocalesType
+}
+const { locale } = Astro.props
+const currentLanguage = new URL(Astro.request.url).pathname
+  .slice(1)
+  .split('/')[0]
+---
+
+<section class='flex w-full justify-between'>
+  <div class='mt-[74px]'>
+    <div class='text-white font-semibold text-3xl'>
+      Andrew {locale.home.introduction.heading.part_1}
+      <span class='text-primary'
+        >{locale.home.introduction.heading.part_2}
+        <br />
+        {locale.home.introduction.heading.part_3}</span
+      >
+    </div>
+    <div class='text-gray mt-8 mb-6'>
+      {locale.home.introduction.description.part_1}
+      <br />
+      {locale.home.introduction.description.part_2}
+    </div>
+    <Button href={`/${currentLanguage}/contacts`}>
+      {locale.home.introduction.button}
+    </Button>
+  </div>
+  <div class='flex flex-col items-center'>
+    <div class='relative w-[470px] h-[386px]'>
+      <img
+        src='/assets/logo-outlined.svg'
+        alt='logo-outlined'
+        class='absolute top-1/3 left-0 z-[1]'
+      />
+      <img
+        src='/assets/people.png'
+        alt='people'
+        class='absolute top-0 left-4 z-[2]'
+      />
+      <img
+        src='/assets/dots.svg'
+        alt='dots'
+        class='absolute top-2/3 right-4 z-[3]'
+      />
+    </div>
+    <div class='flex border border-gray p-2 items-center w-[404px]'>
+      <div class='inline-block bg-primary w-4 h-4 mr-3'></div>
+      <span class='text-gray font-medium leading-[21px]'>
+        {locale.home.introduction.label.part_1}
+        <span class='text-white font-semibold'
+          >{locale.home.introduction.label.part_2}</span
+        >
+      </span>
+    </div>
+  </div>
+</section>

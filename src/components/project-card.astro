@@ -1,0 +1,60 @@
+---
+import type { Project } from '@data/types/Project'
+import Button from './button.astro'
+import type { LocalesType } from '@helpers/locale'
+
+type Props = {
+  project: Project
+  locale: LocalesType
+}
+
+const { project, locale } = Astro.props
+---
+
+<div class='border border-gray h-fit'>
+  <img src={project.image} alt='insta-project' />
+  <div class='border-y border-gray text-gray px-2 py-1.5 text-sm'>
+    {project.technologies.join(' ')}
+  </div>
+  <div class='p-4'>
+    <div class='font-medium text-xl mb-4'>{project.name}</div>
+    <div class='text-gray text-sm mb-4'>
+      {project.description}
+    </div>
+    <div class='flex flex-wrap gap-4'>
+      {
+        project.links.live.front && (
+          <Button href={project.links.live.front} target='blank'>
+            {locale.home.projects.card.live}{' '}
+            {project.links.live.back && ` (${locale.home.projects.card.front})`}{' '}
+            &lt;~&gt;
+          </Button>
+        )
+      }
+      {
+        project.links.live.back && (
+          <Button href={project.links.live.back} target='blank'>
+            {locale.home.projects.card.live} ({locale.home.projects.card.back})
+            &lt;~&gt;
+          </Button>
+        )
+      }
+      <Button href={project.links.code.front} type='secondary' target='blank'>
+        {locale.home.projects.card.code}
+        {project.links.code.back && ` (${locale.home.projects.card.front})`} &gt;=
+      </Button>
+      {
+        project.links.code.back && (
+          <Button
+            href={project.links.code.back}
+            type='secondary'
+            target='blank'
+          >
+            {locale.home.projects.card.code} ({locale.home.projects.card.back})
+            &gt;=
+          </Button>
+        )
+      }
+    </div>
+  </div>
+</div>

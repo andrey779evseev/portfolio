@@ -1,0 +1,27 @@
+{
+  "languages": ["JavaScript", "C#", "TypeScript"],
+  "databases": ["SQLite", "PostgreSQL", "Firestore"],
+  "other": [
+    "HTML",
+    "CSS",
+    "SASS",
+    "Less",
+    "TailwindCSS",
+    "React-Query",
+    "REST",
+    "Node.js",
+    "Vite"
+  ],
+  "tools": ["VSCode", "MacOS", "JetBrainsIDE's", "Git", "Docker"],
+  "frameworks": ["React", "Vue", "Next.js", "Astro", "ASP.NET"],
+  "hostings": [
+    "Vercel",
+    "Heroku",
+    "DigitalOcean",
+    "Render.com",
+    "Railway",
+    "Supabase",
+    "Firebase"
+  ],
+  "interests": ["Swift", "SwiftUI", "Solid.js", "TRPC", "Rust"]
+}

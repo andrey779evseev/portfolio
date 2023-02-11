@@ -1,0 +1,49 @@
+---
+import Label from '@components/label.astro'
+import { LocalesList, createLocale } from '@helpers/locale'
+import Layout from '@layouts/layout.astro'
+
+export const getStaticPaths = () => {
+  return LocalesList.map((locale) => ({
+    params: { lang: locale },
+  }))
+}
+
+const { lang } = Astro.params
+
+const locale = createLocale(lang)
+---
+
+<Layout locale={locale} title='contacts'>
+  <div class='mt-12'>
+    <div class='text-[32px] font-semibold flex mb-16'>
+      <div class='text-primary'>/</div>
+      <div class='text-white'>{locale.contacts.heading}</div>
+    </div>
+    <div class='flex justify-between items-start mb-20'>
+      <div class='text-gray w-[505px]'>
+        {locale.home.contacts.description}
+      </div>
+      <div class='border border-gray p-4'>
+        <div class='text-white font-semibold mb-4'>
+          {locale.home.contacts.message}
+        </div>
+        <div class='flex items-center mb-4'>
+          <img src='/assets/email.svg' alt='email' />
+          <a href='mailto:anddrey779esveev@gmail.com' class='text-gray ml-4'
+            >andrey779evseev@gmail.com</a
+          >
+        </div>
+        <div class='flex items-center'>
+          <img src='/assets/telegram.svg' alt='email' />
+          <div class='text-gray ml-4'>@malifor</div>
+        </div>
+      </div>
+    </div>
+    <Label>{locale.contacts.other}</Label>
+    <div class='flex items-center mb-28'>
+      <img src='/assets/twitter.svg' alt='twitter' />
+      <span class='text-gray ml-3'>@andrew_evseev04</span>
+    </div>
+  </div>
+</Layout>

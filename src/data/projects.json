@@ -1,0 +1,41 @@
+{
+  "decent": [
+    {
+      "image": "/assets/projects/insta.png",
+      "name": "Instagram Clone",
+      "description": "Instagram fullstack web clone",
+      "technologies": [
+        "React",
+        "React-Query",
+        "TailwindCSS",
+        "SCSS",
+        "C#",
+        "ASP.NET",
+        "Supabase"
+      ],
+      "links": {
+        "live": {
+          "front": "https://insta-react-clone.vercel.app/",
+          "back": "https://instagram-clone-api-sp0w.onrender.com/swagger/index.html"
+        },
+        "code": {
+          "front": "https://github.com/andrey779evseev/instagram-react-clone",
+          "back": "https://github.com/andrey779evseev/InstagramCloneApiPublic"
+        }
+      }
+    },
+    {
+      "image": "/assets/projects/portfolio.png",
+      "name": "Portfolio",
+      "description": "Portfolio with Astro",
+      "technologies": ["Astro", "TailwindCSS"],
+      "links": {
+        "live": {},
+        "code": {
+          "front": "https://github.com/andrey779evseev/portfolio"
+        }
+      }
+    }
+  ],
+  "small": []
+}

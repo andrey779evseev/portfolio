@@ -1,0 +1,34 @@
+---
+import Label from '@components/label.astro'
+import ProjectCard from '@components/project-card.astro'
+import projects from '@data/projects.json'
+import type { LocalesType } from '@helpers/locale'
+
+type Props = {
+  locale: LocalesType
+}
+
+const { locale } = Astro.props
+
+const currentLanguage = new URL(Astro.request.url).pathname
+  .slice(1)
+  .split('/')[0]
+---
+
+<section class='mb-24'>
+  <div class='flex justify-between items-center mb-12'>
+    <Label withMargin={false}>
+      {locale.home.projects.heading.name}
+    </Label>
+    <a class='min-w-fit' href={`/${currentLanguage}/projects`}
+      >{locale.home.projects.heading.button} ~~&gt;</a
+    >
+  </div>
+  <div class='grid grid-cols-3 gap-4'>
+    {
+      projects.decent
+        .slice(0, 3)
+        .map((project) => <ProjectCard project={project} locale={locale} />)
+    }
+  </div>
+</section>

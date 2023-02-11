@@ -1,0 +1,84 @@
+{
+  "header": {
+    "links": {
+      "home": "home",
+      "projects": "projects",
+      "about": "about-me",
+      "contacts": "contacts"
+    }
+  },
+  "footer": {
+    "description": "Full-stack Web developer based in Moldova",
+    "media": "Media"
+  },
+  "home": {
+    "introduction": {
+      "heading": {
+        "part_1": "is a",
+        "part_2": "fullstack web",
+        "part_3": "developer"
+      },
+      "description": {
+        "part_1": "He crafts responsive websites where technologies",
+        "part_2": "meet creativity"
+      },
+      "button": "Contact me!!",
+      "label": {
+        "part_1": "Currently",
+        "part_2": "Open To Work"
+      }
+    },
+    "quote": {
+      "text": "With great power comes great electricity bill",
+      "author": "Dr. Who"
+    },
+    "projects": {
+      "heading": {
+        "name": "projects",
+        "button": "View all"
+      },
+      "card": {
+        "live": "Live",
+        "code": "Code",
+        "front": "Front",
+        "back": "Back"
+      }
+    },
+    "skills": {
+      "heading": "skills",
+      "languages": "Languages",
+      "interests": "Interests",
+      "databases": "Databases",
+      "other": "Other",
+      "tools": "Tools",
+      "frameworks": "Frameworks",
+      "hostings": "Hostings"
+    },
+    "about": {
+      "heading": "about-me",
+      "description": {
+        "part_1": "Hello, i'm Andrew!",
+        "part_2": "I'm a full-stack developer based in Moldova. I can develop responsive websites from scratch and raise them into modern user-friendly web experiences.",
+        "part_3": "Transforming my creativity and knowledge into a websites has been my passion for over a two years. I always strive to learn about the newest technologies and frameworks."
+      },
+      "button": "Read more"
+    },
+    "contacts": {
+      "heading": "contacts",
+      "description": "I'm interested in exciting projects. However, if you have other request or question, don't hesitate to contact me",
+      "message": "Message me here"
+    }
+  },
+  "projects": {
+    "heading": "projects",
+    "description": "List of my projects"
+  },
+  "about": {
+    "heading": "about-me",
+    "description": "Who am i?"
+  },
+  "contacts": {
+    "heading": "contacts",
+    "other": "others-media"
+  }
+}

@@ -1,0 +1,25 @@
+---
+import type { LocalesType } from '@helpers/locale'
+
+type Props = {
+  locale: LocalesType
+}
+const { locale } = Astro.props
+---
+
+<section class='mt-28 mb-[74px] flex justify-center'>
+  <div class='flex flex-col items-end'>
+    <div class='p-8 border border-gray relative'>
+      {locale.home.quote.text}
+      <div class='absolute py-1 px-2 bg-background -top-4 left-3'>
+        <img src='/assets/quote.svg' alt='quote' />
+      </div>
+      <div class='absolute py-1 px-2 bg-background -bottom-4 right-4 z-[1]'>
+        <img src='/assets/quote.svg' alt='quote' />
+      </div>
+    </div>
+    <div class='p-4 relative -top-px border border-gray'>
+      - {locale.home.quote.author}
+    </div>
+  </div>
+</section>

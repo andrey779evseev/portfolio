@@ -1,0 +1,15 @@
+---
+type Props = {
+  withMargin?: boolean
+}
+
+const { withMargin = true } = Astro.props
+---
+
+<div class:list={['text-end flex items-center', { 'mb-12': withMargin }]}>
+  <div class='font-medium text-3xl mr-4 flex'>
+    <span class='text-primary'>#</span>
+    <slot />
+  </div>
+  <div class='h-px w-[10vw] bg-primary'></div>
+</div>

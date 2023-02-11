@@ -1,0 +1,36 @@
+---
+import Label from '@components/label.astro'
+import type { LocalesType } from '@helpers/locale'
+
+type Props = {
+  locale: LocalesType
+}
+
+const { locale } = Astro.props
+---
+
+<section class='mb-28'>
+  <Label>
+    {locale.home.contacts.heading}
+  </Label>
+  <div class='flex justify-between items-start'>
+    <div class='text-gray w-[505px]'>
+      {locale.home.contacts.description}
+    </div>
+    <div class='border border-gray p-4'>
+      <div class='text-white font-semibold mb-4'>
+        {locale.home.contacts.message}
+      </div>
+      <div class='flex items-center mb-4'>
+        <img src='/assets/email.svg' alt='email' />
+        <a href='mailto:anddrey779esveev@gmail.com' class='text-gray ml-4'
+          >andrey779evseev@gmail.com</a
+        >
+      </div>
+      <div class='flex items-center'>
+        <img src='/assets/telegram.svg' alt='email' />
+        <div class='text-gray ml-4'>@malifor</div>
+      </div>
+    </div>
+  </div>
+</section>

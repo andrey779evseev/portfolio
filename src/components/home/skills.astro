@@ -1,0 +1,82 @@
+---
+import Label from '@components/label.astro'
+import skills from '@data/skills.json'
+import type { LocalesType } from '@helpers/locale'
+type Props = {
+  locale: LocalesType
+}
+const { locale } = Astro.props
+---
+
+<section class='mb-28'>
+  <Label>
+    {locale.home.skills.heading}
+  </Label>
+  <div class='flex justify-between items-start'>
+    <img src='/assets/composition.svg' alt='composition' />
+    <div class='grid grid-cols-3 gap-4'>
+      <div>
+        <div class='w-44 border border-gray mb-4'>
+          <div class='p-2 text-white font-semibold border-b border-gray'>
+            {locale.home.skills.languages}
+          </div>
+          <div class='p-2 text-gray flex flex-wrap'>
+            {skills.languages.join(' ')}
+          </div>
+        </div>
+        <div class='w-44 border border-gray'>
+          <div class='p-2 text-white font-semibold border-b border-gray'>
+            {locale.home.skills.frameworks}
+          </div>
+          <div class='p-2 text-gray flex flex-wrap'>
+            {skills.frameworks.join(' ')}
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class='w-44 border border-gray mb-4'>
+          <div class='p-2 text-white font-semibold border-b border-gray'>
+            {locale.home.skills.databases}
+          </div>
+          <div class='p-2 text-gray flex flex-wrap'>
+            {skills.databases.join(' ')}
+          </div>
+        </div>
+        <div class='w-44 border border-gray'>
+          <div class='p-2 text-white font-semibold border-b border-gray'>
+            {locale.home.skills.other}
+          </div>
+          <div class='p-2 text-gray flex flex-wrap'>
+            {skills.other.join(' ')}
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class='w-44 border border-gray mb-4'>
+          <div class='p-2 text-white font-semibold border-b border-gray'>
+            {locale.home.skills.tools}
+          </div>
+          <div class='p-2 text-gray flex flex-wrap'>
+            {skills.tools.join(' ')}
+          </div>
+        </div>
+        <div class='w-44 border border-gray mb-4'>
+          <div class='p-2 text-white font-semibold border-b border-gray'>
+            {locale.home.skills.interests}
+          </div>
+          <div class='p-2 text-gray flex flex-wrap'>
+            {skills.interests.join(' ')}
+          </div>
+        </div>
+        <div class='w-44 border border-gray'>
+          <div class='p-2 text-white font-semibold border-b border-gray'>
+            {locale.home.skills.hostings}
+          </div>
+          <div class='p-2 text-gray flex flex-wrap'>
+            {skills.hostings.join(' ')}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
