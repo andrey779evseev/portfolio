@@ -28,7 +28,7 @@
       "image": "/assets/projects/portfolio.png",
       "name": "Portfolio",
       "description": "Portfolio with Astro",
-      "technologies": ["Astro", "TailwindCSS"],
+      "technologies": ["Astro", "TailwindCSS", "Solid.js"],
       "links": {
         "live": {},
         "code": {
