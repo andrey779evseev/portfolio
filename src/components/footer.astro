@@ -8,13 +8,15 @@ type Props = {
 const { locale } = Astro.props
 ---
 
-<footer class='border-t border-gray py-8'>
-  <div class='mx-auto w-full max-w-5xl'>
-    <div class='w-full flex justify-between items-start mb-12'>
-      <div>
-        <div class='flex items-center mb-4'>
-          <img src='/assets/logo-filled.svg' alt='logo' class='w-6 h-6' />
-          <span class='text-white font-bold text-2xl ml-2 mr-8'>Malifor</span>
+<footer class='border-t border-gray sm:py-8 py-4 sm:px-0 px-8'>
+  <div class='mx-auto w-full xl:max-w-5xl lg:max-w-4xl md:max-w-3xl ss:max-w-2xl sm:max-w-xl sm:p-0 p-8'>
+    <div class='w-full flex justify-between sm:items-start items-center mb-12 sm:flex-row flex-col'>
+      <div class="sm:mb-0 mb-8">
+        <div class='flex items-center mb-4 sm:flex-row flex-col'>
+          <span class="flex items-center">
+            <img src='/assets/logo-filled.svg' alt='logo' class='w-6 h-6' />
+            <span class='text-white font-bold text-2xl ml-2 mr-8'>Malifor</span>
+          </span>
           <a
             href='mailto:andrey779evseev@gmail.com'
             class='text-gray hover:text-white transition-colors'
@@ -22,11 +24,11 @@ const { locale } = Astro.props
             andrey779evseev@gmail.com
           </a>
         </div>
-        <div class='text-gray'>
+        <div class='text-gray sm:text-left text-center'>
           {locale.footer.description}
         </div>
       </div>
-      <div>
+      <div class="flex flex-col sm:items-start items-center sm:w-fit w-full">
         <div class='text-white font-medium text-2xl mb-3'>
           {locale.footer.media}
         </div>

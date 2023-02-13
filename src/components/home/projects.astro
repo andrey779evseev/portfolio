@@ -15,16 +15,16 @@ const currentLanguage = new URL(Astro.request.url).pathname
   .split('/')[0]
 ---
 
-<section class='mb-24'>
-  <div class='flex justify-between items-center mb-12'>
+<section class='mb-24 sm:p-0 p-8'>
+  <div class='flex justify-between sm:items-center mb-12 sm:flex-row flex-col'>
     <Label withMargin={false}>
       {locale.home.projects.heading.name}
     </Label>
-    <a class='min-w-fit' href={`/${currentLanguage}/projects`}
-      >{locale.home.projects.heading.button} ~~&gt;</a
-    >
+    <a class='min-w-fit sm:mt-0 mt-4' href={`/${currentLanguage}/projects`}>
+      {locale.home.projects.heading.button} ~~&gt;
+    </a>
   </div>
-  <div class='grid grid-cols-3 gap-4'>
+  <div class='grid lg:grid-cols-3 sm:grid-cols-2 gap-4'>
     {
       projects.decent
         .slice(0, 3)

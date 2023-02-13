@@ -1,15 +1,12 @@
 ---
 import type { LocalesType } from '@helpers/locale'
 import { LocalesList } from '@helpers/locale'
+import Bookmarks from './bookmarks.astro'
+import links from '@data/links.json'
+import Menu from './islands/menu'
 
 export type Props = {
   locale: LocalesType
-}
-
-type LinkType = {
-  href: string
-  name: string
-  isActive: boolean
 }
 
 const { locale } = Astro.props
@@ -18,55 +15,38 @@ const [currentLanguage, currentPage] = new URL(Astro.request.url).pathname
   .slice(1)
   .split('/')
 
-const links: LinkType[] = [
-  {
-    href: `/${currentLanguage}/home`,
-    name: locale.header.links.home,
-    isActive: currentPage === 'home',
-  },
-  {
-    href: `/${currentLanguage}/projects`,
-    name: locale.header.links.projects,
-    isActive: currentPage === 'projects',
-  },
-  {
-    href: `/${currentLanguage}/about-me`,
-    name: locale.header.links.about,
-    isActive: currentPage === 'about-me',
-  },
-  {
-    href: `/${currentLanguage}/contacts`,
-    name: locale.header.links.contacts,
-    isActive: currentPage === 'contacts',
-  },
-]
 ---
 
-<header class='mx-auto w-full max-w-5xl'>
+<header class='mx-auto w-full'>
   <div
-    class='fixed h-16 w-full max-w-5xl top-0 z-50 bg-background shadow-[0_0_10px_10px_#282C33]'
+    class='fixed ss:h-16 sm:h-28 w-full left-0 top-0 z-20 bg-background shadow-[0_0_10px_10px_#282C33]'
   >
-    <div class='flex items-center justify-between mt-8'>
-      <a href='/home' class='flex gap-2 items-center'>
+    <Bookmarks />
+    <div class='flex items-center justify-between mt-8 xl:max-w-5xl lg:max-w-4xl md:max-w-3xl ss:max-w-2xl sm:max-w-xl ss:flex-row sm:flex-col sm:mx-auto sm:p-0 px-16 relative'>
+      <a href={`/${currentLanguage}/home`} class='flex gap-2 items-center ss:m-0 sm:mb-4'>
         <img src='/assets/logo-filled.svg' alt='logo' class='h-4 w-4' />
         <div class="font-bold">Malifor</div>
       </a>
-      <div class='flex text-gray'>
+      <div class="sm:hidden">
+        <Menu client:visible currentPage={currentPage} currentLanguage={currentLanguage} locale={locale}/>
+      </div>
+      <div class='sm:flex text-gray hidden'>
         {
           links.map((link, i) => (
             <a
-              href={link.href}
+              href={`/${currentLanguage}/${link}`}
               class:list={[
                 'font-medium flex',
-                { 'text-white': link.isActive, 'ml-8': i !== 0 },
+                { 'text-white': link === currentPage, 'ml-8': i !== 0 },
               ]}
             >
               <span class='text-primary'>#</span>
-              {link.name}
+              {/* @ts-ignore */}
+              {locale.header.links[link]}
             </a>
           ))
         }
-        <div class='ml-8 cursor-pointer relative group'>
+        <div class='ml-8  cursor-pointer relative group'>
           <div class='flex gap-1'>
             {currentLanguage.toUpperCase()}
             <img src='/assets/arrow-down.svg' alt='arrow-down' />

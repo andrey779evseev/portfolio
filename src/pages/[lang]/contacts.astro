@@ -15,28 +15,28 @@ const locale = createLocale(lang)
 ---
 
 <Layout locale={locale} title='contacts'>
-  <div class='mt-12'>
+  <div class='mt-12 sm:p-0 px-8'>
     <div class='text-[32px] font-semibold flex mb-16'>
       <div class='text-primary'>/</div>
       <div class='text-white'>{locale.contacts.heading}</div>
     </div>
-    <div class='flex justify-between items-start mb-20'>
-      <div class='text-gray w-[505px]'>
+    <div class='flex justify-between lg:items-start items-center mb-20 lg:flex-row flex-col'>
+      <div class='text-gray sm:w-[505px] lg:text-left text-center lg:mb-0 mb-4'>
         {locale.home.contacts.description}
       </div>
-      <div class='border border-gray p-4'>
+      <div class='border border-gray sm:p-4 p-2'>
         <div class='text-white font-semibold mb-4'>
           {locale.home.contacts.message}
         </div>
         <div class='flex items-center mb-4'>
           <img src='/assets/email.svg' alt='email' />
-          <a href='mailto:anddrey779esveev@gmail.com' class='text-gray ml-4'
-            >andrey779evseev@gmail.com</a
-          >
+          <a href='mailto:anddrey779esveev@gmail.com' class='text-gray sm:ml-4 ml-1 sm:text-base text-sm'>
+            andrey779evseev@gmail.com
+          </a>
         </div>
         <div class='flex items-center'>
           <img src='/assets/telegram.svg' alt='email' />
-          <div class='text-gray ml-4'>@malifor</div>
+          <div class='text-gray sm:ml-4 ml-1 sm:text-base text-sm'>@malifor</div>
         </div>
       </div>
     </div>

@@ -3,7 +3,7 @@
     "links": {
       "home": "home",
       "projects": "projects",
-      "about": "about-me",
+      "about-me": "about-me",
       "contacts": "contacts"
     }
   },
@@ -15,13 +15,9 @@
     "introduction": {
       "heading": {
         "part_1": "is a",
-        "part_2": "fullstack web",
-        "part_3": "developer"
+        "part_2": "fullstack web developer"
       },
-      "description": {
-        "part_1": "He crafts responsive websites where technologies",
-        "part_2": "meet creativity"
-      },
+      "description": "He crafts responsive websites where technologies meet creativity",
       "button": "Contact me!!",
       "label": {
         "part_1": "Currently",
@@ -79,6 +75,6 @@
   },
   "contacts": {
     "heading": "contacts",
-    "other": "others-media"
+    "other": "others"
   }
 }

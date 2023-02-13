@@ -13,27 +13,29 @@ const currentLanguage = new URL(Astro.request.url).pathname
   .split('/')[0]
 ---
 
-<section class='mb-28'>
-  <div class='flex justify-between items-start'>
-    <div class='w-full'>
+<section class='mb-28 sm:p-0 p-8'>
+  <div class='flex justify-between lg:items-start lg:flex-row flex-col items-center'>
+    <div class='w-full lg:m-0 sm:mb-8'>
       <Label>
         {locale.home.about.heading}
       </Label>
-      <div class='text-gray max-w-[515px] mb-7'>
+      <div class='text-gray lg:max-w-[515px] mb-7 lg:text-left text-center'>
         {locale.home.about.description.part_1}<br /><br />
         {locale.home.about.description.part_2}<br /><br />
         {locale.home.about.description.part_3}
       </div>
-      <Button href={`/${currentLanguage}/about-me`}>
-        {locale.home.about.button} -&gt;
-      </Button>
+      <div class="lg:m-0 mx-auto w-fit">
+        <Button href={`/${currentLanguage}/about-me`}>
+          {locale.home.about.button} -&gt;
+        </Button>
+      </div>
     </div>
     <div class='relative min-w-[339px]'>
       <img src='/assets/people2.png' alt='people' />
       <img
         src='/assets/dots.svg'
         alt='dots'
-        class='absolute top-[10%] -left-1'
+        class='absolute top-[10%] sm:-left-1 left-8 '
       />
       <img
         src='/assets/dots2.svg'

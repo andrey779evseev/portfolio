@@ -8,15 +8,15 @@ type Props = {
 const { locale } = Astro.props
 ---
 
-<section class='mb-28'>
+<section class='mb-28 sm:p-0 p-8'>
   <Label>
     {locale.home.skills.heading}
   </Label>
-  <div class='flex justify-between items-start'>
+  <div class='flex ss:justify-between xl:items-start xl:flex-row flex-col-reverse items-center'>
     <img src='/assets/composition.svg' alt='composition' />
-    <div class='grid grid-cols-3 gap-4'>
+    <div class='sm:grid sm:grid-cols-3 flex flex-col gap-4 xl:m-0 mb-16'>
       <div>
-        <div class='w-44 border border-gray mb-4'>
+        <div class='w-40 border border-gray mb-4'>
           <div class='p-2 text-white font-semibold border-b border-gray'>
             {locale.home.skills.languages}
           </div>
@@ -24,7 +24,7 @@ const { locale } = Astro.props
             {skills.languages.join(' ')}
           </div>
         </div>
-        <div class='w-44 border border-gray'>
+        <div class='w-40 border border-gray'>
           <div class='p-2 text-white font-semibold border-b border-gray'>
             {locale.home.skills.frameworks}
           </div>
@@ -34,7 +34,7 @@ const { locale } = Astro.props
         </div>
       </div>
       <div>
-        <div class='w-44 border border-gray mb-4'>
+        <div class='w-40 border border-gray mb-4'>
           <div class='p-2 text-white font-semibold border-b border-gray'>
             {locale.home.skills.databases}
           </div>
@@ -42,7 +42,7 @@ const { locale } = Astro.props
             {skills.databases.join(' ')}
           </div>
         </div>
-        <div class='w-44 border border-gray'>
+        <div class='w-40 border border-gray'>
           <div class='p-2 text-white font-semibold border-b border-gray'>
             {locale.home.skills.other}
           </div>
@@ -52,7 +52,7 @@ const { locale } = Astro.props
         </div>
       </div>
       <div>
-        <div class='w-44 border border-gray mb-4'>
+        <div class='w-40 border border-gray mb-4'>
           <div class='p-2 text-white font-semibold border-b border-gray'>
             {locale.home.skills.tools}
           </div>
@@ -60,7 +60,7 @@ const { locale } = Astro.props
             {skills.tools.join(' ')}
           </div>
         </div>
-        <div class='w-44 border border-gray mb-4'>
+        <div class='w-40 border border-gray mb-4'>
           <div class='p-2 text-white font-semibold border-b border-gray'>
             {locale.home.skills.interests}
           </div>
@@ -68,7 +68,7 @@ const { locale } = Astro.props
             {skills.interests.join(' ')}
           </div>
         </div>
-        <div class='w-44 border border-gray'>
+        <div class='w-40 border border-gray'>
           <div class='p-2 text-white font-semibold border-b border-gray'>
             {locale.home.skills.hostings}
           </div>

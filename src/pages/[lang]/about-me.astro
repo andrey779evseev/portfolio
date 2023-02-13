@@ -16,7 +16,7 @@ const locale = createLocale(lang)
 ---
 
 <Layout locale={locale} title='about-me'>
-  <div class='mt-12'>
+  <div class='mt-12 sm:p-0 px-8'>
     <div class='mb-16'>
       <div class='text-[32px] font-semibold flex mb-4'>
         <div class='text-primary'>/</div>
@@ -24,7 +24,7 @@ const locale = createLocale(lang)
       </div>
       <div>{locale.about.description}</div>
     </div>
-    <div class='flex justify-between items-center mb-28'>
+    <div class='flex sm:flex-row flex-col justify-between items-center mb-28'>
       <div class='w-full'>
         <div class='text-gray max-w-[515px] mb-7'>
           {locale.home.about.description.part_1}<br /><br />
@@ -37,12 +37,12 @@ const locale = createLocale(lang)
         <img
           src='/assets/dots.svg'
           alt='dots'
-          class='absolute top-[10%] -left-1'
+          class='absolute top-[10%] sm:-left-1 left-8'
         />
         <img
           src='/assets/dots2.svg'
           alt='dots'
-          class='absolute top-2/3 right-4'
+          class='absolute sm:top-2/3 top-1/2 right-4'
         />
         <div class='h-px w-[271px] absolute bottom-0 right-6 bg-primary'></div>
       </div>
@@ -50,3 +50,9 @@ const locale = createLocale(lang)
     <Skills locale={locale} />
   </div>
 </Layout>
+
+<style is:global>
+  main {
+    @apply sm:bg-cover bg-contain;
+  }
+</style>
