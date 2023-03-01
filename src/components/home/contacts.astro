@@ -1,35 +1,42 @@
 ---
-import Label from '@components/label.astro'
-import type { LocalesType } from '@helpers/locale'
+import Label from "@components/label.astro";
+import type { LocalesType } from "@helpers/locale";
 
 type Props = {
-  locale: LocalesType
-}
+  locale: LocalesType;
+};
 
-const { locale } = Astro.props
+const { locale } = Astro.props;
 ---
 
-<section class='mb-28 sm:p-0 p-6'>
+<section class="mb-28 p-6 sm:p-0">
   <Label>
     {locale.home.contacts.heading}
   </Label>
-  <div class='flex justify-between lg:items-start lg:flex-row flex-col items-center'>
-    <div class='text-gray sm:w-[505px] w-full lg:mb-0 mb-8 lg:text-left text-center'>
+  <div
+    class="flex flex-col items-center justify-between lg:flex-row lg:items-start"
+  >
+    <div
+      class="mb-8 w-full text-center text-gray sm:w-[505px] lg:mb-0 lg:text-left"
+    >
       {locale.home.contacts.description}
     </div>
-    <div class='border border-gray sm:p-4 p-2'>
-      <div class='text-white font-semibold mb-4'>
+    <div class="border border-gray p-2 sm:p-4">
+      <div class="mb-4 font-semibold text-white">
         {locale.home.contacts.message}
       </div>
-      <div class='flex items-center mb-4'>
-        <img src='/assets/email.svg' alt='email' />
-        <a href='mailto:anddrey779esveev@gmail.com' class='text-gray sm:ml-4 ml-1 sm:text-base text-sm'>
+      <div class="mb-4 flex items-center">
+        <img src="/assets/email.svg" alt="email" />
+        <a
+          href="mailto:anddrey779esveev@gmail.com"
+          class="ml-1 text-sm text-gray sm:ml-4 sm:text-base"
+        >
           andrey779evseev@gmail.com
         </a>
       </div>
-      <div class='flex items-center'>
-        <img src='/assets/telegram.svg' alt='email' />
-        <div class='text-gray sm:ml-4 ml-1 sm:text-base text-sm'>@malifor</div>
+      <div class="flex items-center">
+        <img src="/assets/telegram.svg" alt="email" />
+        <div class="ml-1 text-sm text-gray sm:ml-4 sm:text-base">@malifor</div>
       </div>
     </div>
   </div>

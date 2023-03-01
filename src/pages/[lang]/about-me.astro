@@ -1,50 +1,50 @@
 ---
-import Skills from '@components/home/skills.astro'
-import { LocalesList, createLocale } from '@helpers/locale'
-import Layout from '@layouts/layout.astro'
-import Label from '@components/label.astro'
+import Skills from "@components/home/skills.astro";
+import { LocalesList, createLocale } from "@helpers/locale";
+import Layout from "@layouts/layout.astro";
+import Label from "@components/label.astro";
 
 export const getStaticPaths = () => {
   return LocalesList.map((locale) => ({
     params: { lang: locale },
-  }))
-}
+  }));
+};
 
-const { lang } = Astro.params
+const { lang } = Astro.params;
 
-const locale = createLocale(lang)
+const locale = createLocale(lang);
 ---
 
-<Layout locale={locale} title='about-me'>
-  <div class='mt-12 sm:p-0 px-8'>
-    <div class='mb-16'>
-      <div class='text-[32px] font-semibold flex mb-4'>
-        <div class='text-primary'>/</div>
-        <div class='text-white'>{locale.about.heading}</div>
+<Layout locale={locale} title="about-me">
+  <div class="mt-12 px-8 sm:p-0">
+    <div class="mb-16">
+      <div class="mb-4 flex text-[32px] font-semibold">
+        <div class="text-primary">/</div>
+        <div class="text-white">{locale.about.heading}</div>
       </div>
       <div>{locale.about.description}</div>
     </div>
-    <div class='flex sm:flex-row flex-col justify-between items-center mb-28'>
-      <div class='w-full'>
-        <div class='text-gray max-w-[515px] mb-7'>
+    <div class="mb-28 flex flex-col items-center justify-between sm:flex-row">
+      <div class="w-full">
+        <div class="mb-7 max-w-[515px] text-gray">
           {locale.home.about.description.part_1}<br /><br />
           {locale.home.about.description.part_2}<br /><br />
           {locale.home.about.description.part_3}
         </div>
       </div>
-      <div class='relative min-w-[339px]'>
-        <img src='/assets/people2.png' alt='people' />
+      <div class="relative min-w-[339px]">
+        <img src="/assets/people2.png" alt="people" />
         <img
-          src='/assets/dots.svg'
-          alt='dots'
-          class='absolute top-[10%] sm:-left-1 left-8'
+          src="/assets/dots.svg"
+          alt="dots"
+          class="absolute top-[10%] left-8 sm:-left-1"
         />
         <img
-          src='/assets/dots2.svg'
-          alt='dots'
-          class='absolute sm:top-2/3 top-1/2 right-4'
+          src="/assets/dots2.svg"
+          alt="dots"
+          class="absolute top-1/2 right-4 sm:top-2/3"
         />
-        <div class='h-px w-[271px] absolute bottom-0 right-6 bg-primary'></div>
+        <div class="absolute bottom-0 right-6 h-px w-[271px] bg-primary"></div>
       </div>
     </div>
     <Skills locale={locale} />
@@ -53,6 +53,6 @@ const locale = createLocale(lang)
 
 <style is:global>
   main {
-    @apply sm:bg-cover bg-contain;
+    @apply bg-contain sm:bg-cover;
   }
 </style>

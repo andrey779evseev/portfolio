@@ -3,18 +3,10 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@components/*": [
-        "src/components/*"
-      ],
-      "@helpers/*": [
-        "src/helpers/*"
-      ],
-      "@layouts/*": [
-        "src/layouts/*"
-      ],
-      "@data/*": [
-        "src/data/*"
-      ]
+      "@components/*": ["src/components/*"],
+      "@helpers/*": ["src/helpers/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@data/*": ["src/data/*"]
     },
     "jsx": "preserve",
     "jsxImportSource": "solid-js"

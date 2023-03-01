@@ -1,27 +1,27 @@
 ---
-import Button from '@components/button.astro'
-import About from '@components/home/about.astro'
-import Contacts from '@components/home/contacts.astro'
-import Introduction from '@components/home/introduction.astro'
-import Projects from '@components/home/projects.astro'
-import Quote from '@components/home/quote.astro'
-import Skills from '@components/home/skills.astro'
-import { createLocale, LocalesList } from '@helpers/locale'
-import Layout from '@layouts/layout.astro'
+import Button from "@components/button.astro";
+import About from "@components/home/about.astro";
+import Contacts from "@components/home/contacts.astro";
+import Introduction from "@components/home/introduction.astro";
+import Projects from "@components/home/projects.astro";
+import Quote from "@components/home/quote.astro";
+import Skills from "@components/home/skills.astro";
+import { createLocale, LocalesList } from "@helpers/locale";
+import Layout from "@layouts/layout.astro";
 
 export const getStaticPaths = () => {
   return LocalesList.map((locale) => ({
     params: { lang: locale },
-  }))
-}
+  }));
+};
 
-const { lang } = Astro.params
+const { lang } = Astro.params;
 
-const locale = createLocale(lang)
+const locale = createLocale(lang);
 ---
 
-<Layout title='home' locale={locale}>
-  <div class='mt-16'>
+<Layout title="home" locale={locale}>
+  <div class="mt-16">
     <Introduction locale={locale} />
     <Quote locale={locale} />
     <Projects locale={locale} />

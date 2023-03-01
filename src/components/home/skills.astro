@@ -1,79 +1,81 @@
 ---
-import Label from '@components/label.astro'
-import skills from '@data/skills.json'
-import type { LocalesType } from '@helpers/locale'
+import Label from "@components/label.astro";
+import skills from "@data/skills.json";
+import type { LocalesType } from "@helpers/locale";
 type Props = {
-  locale: LocalesType
-}
-const { locale } = Astro.props
+  locale: LocalesType;
+};
+const { locale } = Astro.props;
 ---
 
-<section class='mb-28 sm:p-0 p-8'>
+<section class="mb-28 p-8 sm:p-0">
   <Label>
     {locale.home.skills.heading}
   </Label>
-  <div class='flex ss:justify-between xl:items-start xl:flex-row flex-col-reverse items-center'>
-    <img src='/assets/composition.svg' alt='composition' />
-    <div class='sm:grid sm:grid-cols-3 flex flex-col gap-4 xl:m-0 mb-16'>
+  <div
+    class="flex flex-col-reverse items-center ss:justify-between xl:flex-row xl:items-start"
+  >
+    <img src="/assets/composition.svg" alt="composition" />
+    <div class="mb-16 flex flex-col gap-4 sm:grid sm:grid-cols-3 xl:m-0">
       <div>
-        <div class='w-40 border border-gray mb-4'>
-          <div class='p-2 text-white font-semibold border-b border-gray'>
+        <div class="mb-4 w-40 border border-gray">
+          <div class="border-b border-gray p-2 font-semibold text-white">
             {locale.home.skills.languages}
           </div>
-          <div class='p-2 text-gray flex flex-wrap'>
-            {skills.languages.join(' ')}
+          <div class="flex flex-wrap p-2 text-gray">
+            {skills.languages.join(" ")}
           </div>
         </div>
-        <div class='w-40 border border-gray'>
-          <div class='p-2 text-white font-semibold border-b border-gray'>
+        <div class="w-40 border border-gray">
+          <div class="border-b border-gray p-2 font-semibold text-white">
             {locale.home.skills.frameworks}
           </div>
-          <div class='p-2 text-gray flex flex-wrap'>
-            {skills.frameworks.join(' ')}
+          <div class="flex flex-wrap p-2 text-gray">
+            {skills.frameworks.join(" ")}
           </div>
         </div>
       </div>
       <div>
-        <div class='w-40 border border-gray mb-4'>
-          <div class='p-2 text-white font-semibold border-b border-gray'>
+        <div class="mb-4 w-40 border border-gray">
+          <div class="border-b border-gray p-2 font-semibold text-white">
             {locale.home.skills.databases}
           </div>
-          <div class='p-2 text-gray flex flex-wrap'>
-            {skills.databases.join(' ')}
+          <div class="flex flex-wrap p-2 text-gray">
+            {skills.databases.join(" ")}
           </div>
         </div>
-        <div class='w-40 border border-gray'>
-          <div class='p-2 text-white font-semibold border-b border-gray'>
+        <div class="w-40 border border-gray">
+          <div class="border-b border-gray p-2 font-semibold text-white">
             {locale.home.skills.other}
           </div>
-          <div class='p-2 text-gray flex flex-wrap'>
-            {skills.other.join(' ')}
+          <div class="flex flex-wrap p-2 text-gray">
+            {skills.other.join(" ")}
           </div>
         </div>
       </div>
       <div>
-        <div class='w-40 border border-gray mb-4'>
-          <div class='p-2 text-white font-semibold border-b border-gray'>
+        <div class="mb-4 w-40 border border-gray">
+          <div class="border-b border-gray p-2 font-semibold text-white">
             {locale.home.skills.tools}
           </div>
-          <div class='p-2 text-gray flex flex-wrap'>
-            {skills.tools.join(' ')}
+          <div class="flex flex-wrap p-2 text-gray">
+            {skills.tools.join(" ")}
           </div>
         </div>
-        <div class='w-40 border border-gray mb-4'>
-          <div class='p-2 text-white font-semibold border-b border-gray'>
+        <div class="mb-4 w-40 border border-gray">
+          <div class="border-b border-gray p-2 font-semibold text-white">
             {locale.home.skills.interests}
           </div>
-          <div class='p-2 text-gray flex flex-wrap'>
-            {skills.interests.join(' ')}
+          <div class="flex flex-wrap p-2 text-gray">
+            {skills.interests.join(" ")}
           </div>
         </div>
-        <div class='w-40 border border-gray'>
-          <div class='p-2 text-white font-semibold border-b border-gray'>
+        <div class="w-40 border border-gray">
+          <div class="border-b border-gray p-2 font-semibold text-white">
             {locale.home.skills.hostings}
           </div>
-          <div class='p-2 text-gray flex flex-wrap'>
-            {skills.hostings.join(' ')}
+          <div class="flex flex-wrap p-2 text-gray">
+            {skills.hostings.join(" ")}
           </div>
         </div>
       </div>

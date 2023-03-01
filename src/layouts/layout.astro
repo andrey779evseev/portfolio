@@ -1,33 +1,35 @@
 ---
-import Footer from '@components/footer.astro'
-import Header from '@components/header.astro'
-import '@fontsource/fira-code/400.css'
-import '@fontsource/fira-code/500.css'
-import '@fontsource/fira-code/600.css'
-import '@fontsource/fira-code/700.css'
-import type { LocalesType } from '@helpers/locale'
+import Footer from "@components/footer.astro";
+import Header from "@components/header.astro";
+import "@fontsource/fira-code/400.css";
+import "@fontsource/fira-code/500.css";
+import "@fontsource/fira-code/600.css";
+import "@fontsource/fira-code/700.css";
+import type { LocalesType } from "@helpers/locale";
 
 export type Props = {
-  title: string
-  locale: LocalesType
-}
+  title: string;
+  locale: LocalesType;
+};
 
-const { title, locale } = Astro.props
+const { title, locale } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
   <head>
-    <meta charset='UTF-8' />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='icon' type='image/x-icon' href='/favicon.ico' />
-    <meta name='generator' content={Astro.generator} />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
   <body data-title={title}>
     <Header locale={locale} />
     <main>
-      <div class='sm:pt-16 mx-auto w-full xl:max-w-5xl lg:max-w-4xl md:max-w-3xl ss:max-w-2xl sm:max-w-xl sm:p-0 p-8'>
+      <div
+        class="mx-auto w-full p-8 sm:max-w-xl sm:p-0 sm:pt-16 ss:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl"
+      >
         <slot />
       </div>
     </main>
@@ -39,14 +41,14 @@ const { title, locale } = Astro.props
   *,
   *::before,
   *::after {
-    @apply p-0 m-0 box-border;
+    @apply m-0 box-border p-0;
   }
   html {
-    font-family: 'Fira Code', monospace;
+    font-family: "Fira Code", monospace;
     @apply bg-background text-white;
   }
   main {
-    background-image: url('/assets/background.svg');
+    background-image: url("/assets/background.svg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: right 500px;
@@ -54,18 +56,18 @@ const { title, locale } = Astro.props
 </style>
 
 <script>
-  const steps = '/-\\|'
-  const FPS = 2
-  const frameInterval = 1000 / FPS
-  let step = 0
-  let lastTimestep = 0
+  const steps = "/-\\|";
+  const FPS = 2;
+  const frameInterval = 1000 / FPS;
+  let step = 0;
+  let lastTimestep = 0;
   const animation = (timestamp: number) => {
     if (lastTimestep + frameInterval < timestamp) {
-      document.title = `${steps[step++]} ${document.body.dataset.title}`
-      step %= steps.length
-      lastTimestep = timestamp
+      document.title = `${steps[step++]} ${document.body.dataset.title}`;
+      step %= steps.length;
+      lastTimestep = timestamp;
     }
-    window.requestAnimationFrame(animation)
-  }
-  window.requestAnimationFrame(animation)
+    window.requestAnimationFrame(animation);
+  };
+  window.requestAnimationFrame(animation);
 </script>

@@ -1,30 +1,30 @@
 ---
-import Label from '@components/label.astro'
-import ProjectCard from '@components/project-card.astro'
-import projects from '@data/projects.json'
-import type { LocalesType } from '@helpers/locale'
+import Label from "@components/label.astro";
+import ProjectCard from "@components/project-card.astro";
+import projects from "@data/projects.json";
+import type { LocalesType } from "@helpers/locale";
 
 type Props = {
-  locale: LocalesType
-}
+  locale: LocalesType;
+};
 
-const { locale } = Astro.props
+const { locale } = Astro.props;
 
 const currentLanguage = new URL(Astro.request.url).pathname
   .slice(1)
-  .split('/')[0]
+  .split("/")[0];
 ---
 
-<section class='mb-24 sm:p-0 p-8'>
-  <div class='flex justify-between sm:items-center mb-12 sm:flex-row flex-col'>
+<section class="mb-24 p-8 sm:p-0">
+  <div class="mb-12 flex flex-col justify-between sm:flex-row sm:items-center">
     <Label withMargin={false}>
       {locale.home.projects.heading.name}
     </Label>
-    <a class='min-w-fit sm:mt-0 mt-4' href={`/${currentLanguage}/projects`}>
+    <a class="mt-4 min-w-fit sm:mt-0" href={`/${currentLanguage}/projects`}>
       {locale.home.projects.heading.button} ~~&gt;
     </a>
   </div>
-  <div class='grid lg:grid-cols-3 sm:grid-cols-2 gap-4'>
+  <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
     {
       projects.decent
         .slice(0, 3)

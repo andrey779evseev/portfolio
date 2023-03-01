@@ -1,55 +1,59 @@
 ---
-import type { LocalesType } from '@helpers/locale'
+import type { LocalesType } from "@helpers/locale";
 
 type Props = {
-  locale: LocalesType
-}
+  locale: LocalesType;
+};
 
-const { locale } = Astro.props
+const { locale } = Astro.props;
 ---
 
-<footer class='border-t border-gray sm:py-8 py-4 sm:px-0 px-8'>
-  <div class='mx-auto w-full xl:max-w-5xl lg:max-w-4xl md:max-w-3xl ss:max-w-2xl sm:max-w-xl sm:p-0 p-8'>
-    <div class='w-full flex justify-between sm:items-start items-center mb-12 sm:flex-row flex-col'>
-      <div class="sm:mb-0 mb-8">
-        <div class='flex items-center mb-4 sm:flex-row flex-col'>
+<footer class="border-t border-gray py-4 px-8 sm:py-8 sm:px-0">
+  <div
+    class="mx-auto w-full p-8 sm:max-w-xl sm:p-0 ss:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl"
+  >
+    <div
+      class="mb-12 flex w-full flex-col items-center justify-between sm:flex-row sm:items-start"
+    >
+      <div class="mb-8 sm:mb-0">
+        <div class="mb-4 flex flex-col items-center sm:flex-row">
           <span class="flex items-center">
-            <img src='/assets/logo-filled.svg' alt='logo' class='w-6 h-6' />
-            <span class='text-white font-bold text-2xl ml-2 mr-8'>Malifor</span>
+            <img src="/assets/logo-filled.svg" alt="logo" class="h-6 w-6" />
+            <span class="ml-2 mr-8 text-2xl font-bold text-white">Malifor</span>
           </span>
           <a
-            href='mailto:andrey779evseev@gmail.com'
-            class='text-gray hover:text-white transition-colors'
+            href="mailto:andrey779evseev@gmail.com"
+            class="text-gray transition-colors hover:text-white"
           >
             andrey779evseev@gmail.com
           </a>
         </div>
-        <div class='text-gray sm:text-left text-center'>
+        <div class="text-center text-gray sm:text-left">
           {locale.footer.description}
         </div>
       </div>
-      <div class="flex flex-col sm:items-start items-center sm:w-fit w-full">
-        <div class='text-white font-medium text-2xl mb-3'>
+      <div class="flex w-full flex-col items-center sm:w-fit sm:items-start">
+        <div class="mb-3 text-2xl font-medium text-white">
           {locale.footer.media}
         </div>
-        <div class='flex items-center'>
+        <div class="flex items-center">
           <a
-            href='https://github.com/andrey779evseev'
-            target='_blank'
-            class='mr-4'
+            href="https://github.com/andrey779evseev"
+            target="_blank"
+            class="mr-4"
           >
-            <img src='/assets/github.svg' alt='github-icon' />
+            <img src="/assets/github.svg" alt="github-icon" />
           </a>
           <a
-            href='https://www.linkedin.com/in/andrew-evseev-4a890b216'
-            target='_blank'
+            href="https://www.linkedin.com/in/andrew-evseev-4a890b216"
+            target="_blank"
           >
-            <img src='/assets/linkedIn.svg' alt='linkedIn-icon' />
+            <img src="/assets/linkedIn.svg" alt="linkedIn-icon" />
           </a>
         </div>
       </div>
     </div>
-    <div class='text-gray w-full text-center'>
+    <div class="w-full text-center text-gray">
       © Copyright 2023. Made by Malifor
     </div>
   </div>

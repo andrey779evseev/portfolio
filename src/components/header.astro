@@ -1,64 +1,73 @@
 ---
-import type { LocalesType } from '@helpers/locale'
-import { LocalesList } from '@helpers/locale'
-import Bookmarks from './bookmarks.astro'
-import links from '@data/links.json'
-import Menu from './islands/menu'
+import type { LocalesType } from "@helpers/locale";
+import { LocalesList } from "@helpers/locale";
+import Bookmarks from "./bookmarks.astro";
+import links from "@data/links.json";
+import Menu from "./islands/menu";
 
 export type Props = {
-  locale: LocalesType
-}
+  locale: LocalesType;
+};
 
-const { locale } = Astro.props
+const { locale } = Astro.props;
 
 const [currentLanguage, currentPage] = new URL(Astro.request.url).pathname
   .slice(1)
-  .split('/')
-
+  .split("/");
 ---
 
-<header class='mx-auto w-full'>
+<header class="mx-auto w-full">
   <div
-    class='fixed ss:h-16 sm:h-28 h-20 w-full left-0 top-0 z-20 bg-background shadow-[0_0_10px_10px_#282C33]'
+    class="fixed left-0 top-0 z-20 h-20 w-full bg-background shadow-[0_0_10px_10px_#282C33] sm:h-28 ss:h-16"
   >
     <Bookmarks />
-    <div class='flex items-center justify-between mt-8 xl:max-w-5xl lg:max-w-4xl md:max-w-3xl ss:max-w-2xl sm:max-w-xl ss:flex-row sm:flex-col sm:mx-auto sm:p-0 px-16 relative'>
-      <a href={`/${currentLanguage}/home`} class='flex gap-2 items-center ss:m-0 sm:mb-4'>
-        <img src='/assets/logo-filled.svg' alt='logo' class='h-4 w-4' />
+    <div
+      class="relative mt-8 flex items-center justify-between px-16 sm:mx-auto sm:max-w-xl sm:flex-col sm:p-0 ss:max-w-2xl ss:flex-row md:max-w-3xl lg:max-w-4xl xl:max-w-5xl"
+    >
+      <a
+        href={`/${currentLanguage}/home`}
+        class="flex items-center gap-2 sm:mb-4 ss:m-0"
+      >
+        <img src="/assets/logo-filled.svg" alt="logo" class="h-4 w-4" />
         <div class="font-bold">Malifor</div>
       </a>
       <div class="sm:hidden">
-        <Menu client:visible currentPage={currentPage} currentLanguage={currentLanguage} locale={locale}/>
+        <Menu
+          client:visible
+          currentPage={currentPage}
+          currentLanguage={currentLanguage}
+          locale={locale}
+        />
       </div>
-      <div class='sm:flex text-gray hidden'>
+      <div class="hidden text-gray sm:flex">
         {
           links.map((link, i) => (
             <a
               href={`/${currentLanguage}/${link}`}
               class:list={[
-                'font-medium flex',
-                { 'text-white': link === currentPage, 'ml-8': i !== 0 },
+                "font-medium flex",
+                { "text-white": link === currentPage, "ml-8": i !== 0 },
               ]}
             >
-              <span class='text-primary'>#</span>
+              <span class="text-primary">#</span>
               {/* @ts-ignore */}
               {locale.header.links[link]}
             </a>
           ))
         }
-        <div class='ml-8  cursor-pointer relative group'>
-          <div class='flex gap-1'>
+        <div class="group relative ml-8 cursor-pointer">
+          <div class="flex gap-1">
             {currentLanguage.toUpperCase()}
-            <img src='/assets/arrow-down.svg' alt='arrow-down' />
+            <img src="/assets/arrow-down.svg" alt="arrow-down" />
           </div>
           <div
-            class='absolute invisible opacity-0 p-2 border border-gray group-hover:visible group-hover:opacity-100 transition-opacity'
+            class="invisible absolute border border-gray p-2 opacity-0 transition-opacity group-hover:visible group-hover:opacity-100"
           >
             {
               LocalesList.filter((l) => l !== currentLanguage).map((lang) => (
                 <a
                   href={`/${lang}/${currentPage}`}
-                  class='block mb-1.5 last:m-0 hover:text-white'
+                  class="mb-1.5 block last:m-0 hover:text-white"
                 >
                   {lang.toUpperCase()}
                 </a>

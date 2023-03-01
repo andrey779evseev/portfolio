@@ -1,23 +1,23 @@
 ---
 type Props = {
-  href: string
-  type?: 'primary' | 'secondary'
-  target?: 'blank' | 'self'
-}
-const { href, text, type = 'primary', target = 'self' } = Astro.props
+  href: string;
+  type?: "primary" | "secondary";
+  target?: "blank" | "self";
+};
+const { href, text, type = "primary", target = "self" } = Astro.props;
 ---
 
 <div
   class:list={[
-    'relative border px-4 py-2 w-fit font-medium min-h-[37px] inline-block transition-colors',
-    type === 'primary'
-      ? 'border-primary text-white hover:bg-primary/20'
-      : 'border-gray text-gray  hover:bg-gray/20',
+    "relative border px-4 py-2 w-fit font-medium min-h-[37px] inline-block transition-colors",
+    type === "primary"
+      ? "border-primary text-white hover:bg-primary/20"
+      : "border-gray text-gray  hover:bg-gray/20",
   ]}
 >
   <a
     href={href}
-    target={target === 'self' ? '_self' : '_blank'}
-    class='absolute top-0 left-0 outline-none w-full h-full'></a>
+    target={target === "self" ? "_self" : "_blank"}
+    class="absolute top-0 left-0 h-full w-full outline-none"></a>
   <slot />
 </div>
