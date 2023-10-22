@@ -9,7 +9,7 @@ export const LocalesList = ["en", "ru"] as const;
 export type LocalesListType = (typeof LocalesList)[number];
 
 export const createLocale = (
-  locale: LocalesListType | string | undefined
+  locale: LocalesListType | string | undefined,
 ): LocalesType => {
   return locale === "ru" ? ru : en;
 };
