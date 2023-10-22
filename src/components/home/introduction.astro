@@ -1,52 +1,52 @@
 ---
-import Button from "@components/button.astro";
-import type { LocalesType } from "@helpers/locale";
+import Button from '@components/button.astro'
+import type { LocalesType } from '@helpers/locale'
 
 type Props = {
-  locale: LocalesType;
-};
-const { locale } = Astro.props;
+  locale: LocalesType
+}
+const { locale } = Astro.props
 const currentLanguage = new URL(Astro.request.url).pathname
   .slice(1)
-  .split("/")[0];
+  .split('/')[0]
 ---
 
-<section class="flex w-full flex-col items-center justify-between xl:flex-row">
-  <div class="mt-[74px] mb-8 flex flex-col items-center xl:m-0 xl:mr-16">
-    <div class="text-center text-3xl font-semibold text-white xl:text-left">
-      Malifor {locale.home.introduction.heading.part_1}
-      <span class="text-primary">
+<section class='flex w-full flex-col items-center justify-between xl:flex-row'>
+  <div class='mt-[74px] mb-8 flex flex-col items-center xl:m-0 xl:mr-16'>
+    <div class='text-center text-3xl font-semibold text-white xl:text-left'>
+      Malifor {locale.home.introduction.heading.part_1}{' '}
+      <span class='text-primary'>
         {locale.home.introduction.heading.part_2}
       </span>
     </div>
-    <div class="mt-8 mb-6 w-[80%] text-center text-gray sm:w-auto xl:text-left">
+    <div class='mt-8 mb-6 w-[80%] text-center text-gray sm:w-auto xl:text-left'>
       {locale.home.introduction.description}
     </div>
     <Button href={`/${currentLanguage}/contacts`}>
       {locale.home.introduction.button}
     </Button>
   </div>
-  <div class="flex flex-col items-center">
-    <div class="relative h-[70%] w-[80%] sm:h-[386px] sm:w-[470px]">
+  <div class='flex flex-col items-center'>
+    <div class='relative h-[70%] w-[80%] sm:h-[386px] sm:w-[470px]'>
       <img
-        src="/assets/logo-outlined.svg"
-        alt="logo-outlined"
-        class="absolute top-1/3 left-0 z-[1] w-2/4 sm:w-auto"
+        src='/assets/logo-outlined.svg'
+        alt='logo-outlined'
+        class='absolute top-1/3 left-0 z-[1] w-2/4 sm:w-auto'
       />
-      <img src="/assets/people.png" alt="people" class="relative z-[2] ml-4" />
+      <img src='/assets/people.png' alt='people' class='relative z-[2] ml-4' />
       <img
-        src="/assets/dots.svg"
-        alt="dots"
-        class="absolute top-1/2 right-4 z-[3] sm:top-2/3"
+        src='/assets/dots.svg'
+        alt='dots'
+        class='absolute top-1/2 right-4 z-[3] sm:top-2/3'
       />
     </div>
-    <div class="flex w-[85%] items-center border border-gray p-2 sm:w-[404px]">
-      <div class="mr-3 inline-block h-4 w-4 bg-primary"></div>
-      <span class="font-medium leading-[21px] text-gray">
-        {locale.home.introduction.label.part_1}
-        <span class="font-semibold text-white"
-          >{locale.home.introduction.label.part_2}</span
-        >
+    <div class='flex w-[85%] items-center border border-gray p-2 sm:w-[404px]'>
+      <div class='mr-3 inline-block h-4 w-4 bg-primary'></div>
+      <span class='font-medium leading-[21px] text-gray'>
+        {locale.home.introduction.label.part_1}{' '}
+        <span class='font-semibold text-white'>
+          {locale.home.introduction.label.part_2}
+        </span>
       </span>
     </div>
   </div>

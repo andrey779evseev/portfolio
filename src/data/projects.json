@@ -1,12 +1,65 @@
 {
   "decent": [
     {
+      "image": "/assets/projects/breadit.png",
+      "name": "Reddit Clone (Breadit)",
+      "description": "NextJS fullstack reddit clone with RSC",
+      "technologies": [
+        "React",
+        "NextAuth",
+        "Prisma",
+        "TailwindCSS",
+        "ShadcnUI",
+        "EditorJS",
+        "Tanstack-Query",
+        "React-Hook-Form",
+        "Zod",
+        "Supabase",
+        "Uploadthing",
+        "Redis"
+      ],
+      "links": {
+        "live": {
+          "front": "https://malifor-reddit-clone.vercel.app/"
+        },
+        "code": {
+          "front": "https://github.com/andrey779evseev/reddit-clone"
+        }
+      }
+    },
+    {
+      "image": "/assets/projects/diabet-dairy.png",
+      "name": "Diabet Dairy",
+      "description": "NextJS fullstack with RSC + PWA app",
+      "technologies": [
+        "React",
+        "NextAuth",
+        "DrizzleORM",
+        "TailwindCSS",
+        "ShadcnUI",
+        "Jotai",
+        "Tanstack-Table",
+        "Tanstack-Virtual",
+        "React-Hook-Form",
+        "Zod",
+        "Supabase"
+      ],
+      "links": {
+        "live": {
+          "front": "https://diabet-dairy.vercel.app/"
+        },
+        "code": {
+          "front": "https://github.com/andrey779evseev/diabet-dairy"
+        }
+      }
+    },
+    {
       "image": "/assets/projects/insta.png",
       "name": "Instagram Clone",
       "description": "Instagram fullstack web clone",
       "technologies": [
         "React",
-        "React-Query",
+        "Tanstack-Query",
         "TailwindCSS",
         "SCSS",
         "C#",

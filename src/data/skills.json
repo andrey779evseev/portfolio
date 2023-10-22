@@ -1,13 +1,13 @@
 {
   "languages": ["JavaScript", "C#", "TypeScript"],
-  "databases": ["SQLite", "PostgreSQL", "Firestore"],
+  "databases": ["SQLite", "PostgreSQL", "Firestore", "MySQL", "Redis"],
   "other": [
     "HTML",
     "CSS",
     "SASS",
     "Less",
     "TailwindCSS",
-    "React-Query",
+    "Tanstack-Query",
     "REST",
     "Node.js",
     "Vite"
@@ -21,7 +21,9 @@
     "Render.com",
     "Railway",
     "Supabase",
-    "Firebase"
+    "Firebase",
+    "Uploadthing",
+    "Upstash"
   ],
   "interests": ["Swift", "SwiftUI", "Solid.js", "TRPC", "Rust"]
 }
