@@ -6,6 +6,7 @@
       "description": "NextJS fullstack reddit clone with RSC",
       "technologies": [
         "React",
+        "NextJS",
         "NextAuth",
         "Prisma",
         "TailwindCSS",
@@ -33,6 +34,7 @@
       "description": "NextJS fullstack with RSC + PWA app",
       "technologies": [
         "React",
+        "NextJS",
         "NextAuth",
         "DrizzleORM",
         "TailwindCSS",
@@ -59,6 +61,8 @@
       "description": "Instagram fullstack web clone",
       "technologies": [
         "React",
+        "Vite",
+        "Jotai",
         "Tanstack-Query",
         "TailwindCSS",
         "SCSS",
@@ -81,7 +85,11 @@
       "image": "/assets/projects/portfolio.png",
       "name": "Portfolio",
       "description": "Portfolio with Astro",
-      "technologies": ["Astro", "TailwindCSS", "Solid.js"],
+      "technologies": [
+        "Astro",
+        "TailwindCSS",
+        "Solid.js"
+      ],
       "links": {
         "live": {},
         "code": {
