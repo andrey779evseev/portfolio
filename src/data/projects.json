@@ -15,9 +15,10 @@
         "Tanstack-Query",
         "React-Hook-Form",
         "Zod",
-        "Supabase",
+        "Neon",
         "Uploadthing",
-        "Redis"
+        "Redis",
+        "Vercel"
       ],
       "links": {
         "live": {
@@ -31,7 +32,7 @@
     {
       "image": "/assets/projects/diabet-dairy.png",
       "name": "Diabet Dairy",
-      "description": "NextJS fullstack with RSC + PWA app",
+      "description": "NextJS fullstack with RSC + PWA app, Diabet Dairy: Your All-in-One Diabetes Management Solution. Take control of your health with our user-friendly platform for tracking insulin, glucose levels, food intake, and activity. Empower your diabetes management journey today.",
       "technologies": [
         "React",
         "NextJS",
@@ -44,7 +45,8 @@
         "Tanstack-Virtual",
         "React-Hook-Form",
         "Zod",
-        "Supabase"
+        "Supabase",
+        "Vercel"
       ],
       "links": {
         "live": {
@@ -58,7 +60,7 @@
     {
       "image": "/assets/projects/insta.png",
       "name": "Instagram Clone",
-      "description": "Instagram fullstack web clone",
+      "description": "Instagram fullstack web clone, this is my first full-fledged pet project, I know that many of the buttons present do not work, they were added for a visually beautiful design, since implementing all the functionality of a real Instagram is problematic due to the huge number of possibilities",
       "technologies": [
         "React",
         "Vite",
@@ -68,7 +70,9 @@
         "SCSS",
         "C#",
         "ASP.NET",
-        "Supabase"
+        "Supabase",
+        "Render.com",
+        "Vercel"
       ],
       "links": {
         "live": {
@@ -85,11 +89,7 @@
       "image": "/assets/projects/portfolio.png",
       "name": "Portfolio",
       "description": "Portfolio with Astro",
-      "technologies": [
-        "Astro",
-        "TailwindCSS",
-        "Solid.js"
-      ],
+      "technologies": ["Astro", "TailwindCSS", "Solid.js"],
       "links": {
         "live": {},
         "code": {

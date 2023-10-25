@@ -23,7 +23,9 @@
     "Supabase",
     "Firebase",
     "Uploadthing",
-    "Upstash"
+    "Upstash",
+    "Neon",
+    "Planetscale"
   ],
-  "interests": ["Swift", "SwiftUI", "Solid.js", "TRPC", "Rust"]
+  "interests": ["Swift", "SwiftUI", "Rust", "Solid.js"]
 }
